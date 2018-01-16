@@ -1,7 +1,7 @@
 
 var app = angular.module("myApp", ["ngRoute"] );
 
-var BASE_URL = 'http://localhost:80/ZBACK'
+var BASE_URL = 'https://zback.herokuapp.com'
 	
 app.config(function($routeProvider) {
     $routeProvider
