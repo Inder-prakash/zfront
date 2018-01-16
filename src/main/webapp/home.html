@@ -1,0 +1,72 @@
+
+	<div ng-controller="HomeController" class="container">
+	<h1 style="text-align: center;">Enter Your Detail</h1>
+	
+	<div  style="margin: auto; width: 30%" class="form-group">
+    	<input type="text" class="form-control" ng-model="Fname" ng-disabled="all" placeholder="First Name"/>
+    </div>	
+    <br>
+    <div  style="margin: auto; width: 30%" class="form-group">	
+        <input type="text" class="form-control" ng-model="Lname" ng-disabled="all" placeholder="Last Name"/>
+    </div>    
+    <br>
+    <div  style="text-align: center;">    
+          <button ng-click="submit()" ng-disabled="all" class="btn btn-primary">ADD TO DB</button>
+    </div> 
+    <br>   
+    
+    <table class="table table-striped">
+	<thead>
+		<tr >
+			<th>Name</th>
+			<th>Age</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="x in users">		
+			<td>{{x.Fname}}</td>
+			<td>{{x.Lname}}</td>	
+			<td>
+			<button ng-click="editmodal(x.Id)" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Edit With Modal</button>
+			<a href="#!/edit/{{x.Id}}" class="btn btn-info">Edit</a>	
+			<button ng-click="del(x.Id)" class="btn btn-danger">Delete</button></td> 
+			<button ng-click="deleteall(x.Id)" class="btn btn-danger">Delete ALL</button></td> 
+		</tr>
+	</tbody>
+	</table>
+		
+	
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+      
+        <div class="modal-body">
+			<h1 style="text-align: center;">Enter Your Detail</h1>
+			<input type="hidden" class="form-control" ng-model="modalId"  />
+			
+			<div  style="margin: auto; width: 30%" class="form-group">
+				<input type="text" class="form-control" ng-model="modalFname" ng-disabled="modalall" placeholder="First Name"/>
+			</div>	
+			<br>
+			<div  style="margin: auto; width: 30%" class="form-group">	
+			    <input type="text" class="form-control" ng-model="modalLname" ng-disabled="modalall" placeholder="Last Name"/>
+			</div>    
+			<br>
+			<div  style="text-align: center;">    
+			    <button ng-click="update()" data-dismiss="modal" data-dismiss="modal"  class="btn btn-primary">Update</button>
+			</div> 	          
+        </div>
+ 
+      </div>
+      
+    </div>
+  </div>
+  
+  
+ </div>
+	
+	

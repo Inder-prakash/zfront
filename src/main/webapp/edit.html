@@ -1,0 +1,15 @@
+	<div ng-controller="EditController" class="container">
+	<h1 style="text-align: center;">Enter Your Detail</h1>
+	<input type="hidden" class="form-control" ng-model="Id" />
+	<div  style="margin: auto; width: 30%" class="form-group">
+    	<input type="text" class="form-control" ng-model="Fname" ng-disabled="all" placeholder="First Name"/>
+    </div>	
+    <br>
+    <div  style="margin: auto; width: 30%" class="form-group">	
+        <input type="text" class="form-control" ng-model="Lname" ng-disabled="all" placeholder="Last Name"/>
+    </div>    
+    <br>
+    <div  style="text-align: center;">    
+        <button ng-click="update()" ng-disabled="all" class="btn btn-primary">Update</button>
+    </div> 
+    </div>
